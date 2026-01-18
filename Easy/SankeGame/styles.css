@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg,
+            #2b1055,
+            #5f2c82,
+            #9d50bb);
+    background-size: 300% 300%;
+    animation: sunsetMove 12s ease infinite;
+
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    color: #ffffff;
+}
+
+@keyframes sunsetMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.game-container {
+    text-align: center;
+    padding: 25px 30px;
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.4),
+        inset 0 0 30px rgba(255, 255, 255, 0.05);
+
+    transition: transform 0.3s ease;
+}
+
+.game-container:hover {
+    transform: translateY(-4px);
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.score {
+    font-size: 1.3rem;
+    margin: 10px 0;
+    color: #ffddff;
+    text-shadow: 0 0 10px rgba(255, 200, 255, 0.6);
+}
+
+canvas {
+    margin: 15px 0;
+    border-radius: 12px;
+    background: radial-gradient(circle at top, #1a032f, #000);
+
+    border: 2px solid rgba(255, 255, 255, 0.3);
+
+    box-shadow:
+        0 0 25px rgba(180, 100, 255, 0.6),
+        inset 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+.controls {
+    font-size: 0.9rem;
+    opacity: 0.85;
+    margin-bottom: 10px;
+}
+
+.game-over {
+    font-size: 1.4rem;
+    color: #ff6b6b;
+    text-shadow: 0 0 15px rgba(255, 80, 80, 0.8);
+    margin: 10px 0;
+}
+
+button {
+    background: linear-gradient(135deg, #c471ed, #f64f59);
+    border: none;
+    padding: 12px 26px;
+    border-radius: 30px;
+
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+    box-shadow:
+        0 6px 20px rgba(246, 79, 89, 0.4);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 10px 30px rgba(246, 79, 89, 0.6);
+    opacity: 0.95;
+}
+
+button:active {
+    transform: scale(0.97);
+}
